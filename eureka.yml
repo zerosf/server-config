@@ -1,0 +1,30 @@
+
+management:
+  endpoint:
+    health:
+      enabled: true
+      show-details: always
+    shutdown:
+      enabled: true
+  endpoints:
+    web:
+      base-path: /
+      # By default, only 'health' and 'info' are accessible via web
+      exposure:
+        include: '*'
+ 
+ 
+eureka:
+  instance:
+    # See blog post for details, modify /etc/hosts
+    preferIpAddress: true
+    hostname: eureka-p1
+    # Either this one or the spring boot name must be the same
+    # (it works without setting it too, using the alias UNKNOWN)
+    appname: eureka-cluster
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+server:
+  port: 8761
+  

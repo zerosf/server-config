@@ -1,0 +1,12 @@
+server:
+  port: 25600
+
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+      
+      
